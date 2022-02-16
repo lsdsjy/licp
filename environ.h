@@ -50,6 +50,7 @@ Value *findValue(const char *name, Environ *env) {
         if (!strcmp(name, cur->name)) {
             return &cur->value;
         }
+        cur = cur->next;
     }
     if (env->parent) {
         return findValue(name, env->parent);
